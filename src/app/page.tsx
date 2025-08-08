@@ -1,103 +1,199 @@
 import Image from "next/image";
 
+const colors = {
+  primaryGradient: "from-white-700 via-white-600 to-orange-500",
+  primaryText: "text-white-900",
+  primaryBgLight: "from-white-50 via-orange-50 to-indigo-100",
+  primaryBtnBg: "bg-indigo-400",
+  primaryBtnHoverBg: "hover:bg-indigo-300",
+  primaryBtnText: "text-white-900",
+  secondaryBtnBorder: "border-indigo-400",
+  secondaryBtnText: "text-indigo-400",
+  secondaryBtnHoverBg: "hover:bg-white-400",
+  secondaryBtnHoverText: "hover:text-white-900",
+  ctaBgGradient: "from-indigo-400 to-white-600",
+  footerBg: "bg-white-900",
+  footerText: "text-white",
+};
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main
+      className={`min-h-screen font-sans bg-gradient-to-br bg-clip-text text-transparent ${colors.primaryGradient}`}
+    >
+      {/* HEADER */}
+      <header
+        className={`flex justify-between items-center px-8 py-6 max-w-7xl mx-auto text-white`}
+      >
+        <h1 className="text-3xl font-extrabold tracking-wide">EliteAfrika</h1>
+        <nav className="hidden md:flex gap-8 font-semibold text-lg">
+          <a
+            href="#features"
+            className="hover:underline hover:text-indigo-300 transition"
+          >
+            Fonctionnalités
+          </a>
+          <a
+            href="#artists"
+            className="hover:underline hover:text-indigo-300 transition"
+          >
+            Artistes
+          </a>
+          <a
+            href="#download"
+            className="hover:underline hover:text-indigo-300 transition"
+          >
+            Télécharger
+          </a>
+        </nav>
+        <a
+          href="#download"
+          className={`${colors.primaryBtnBg} ${colors.primaryBtnText} font-bold px-5 py-2 rounded-full shadow-lg ${colors.primaryBtnHoverBg} transition`}
+        >
+          Télécharger l'app
+        </a>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* HERO */}
+      <section
+        className={`flex flex-col md:flex-row items-center justify-between px-8 py-20 max-w-7xl mx-auto gap-10 text-white`}
+      >
+        <div className="md:w-1/2 space-y-8">
+          <h2 className="text-5xl font-extrabold leading-tight drop-shadow-lg">
+            Achetez vos billets et découvrez des œuvres digitales uniques
+          </h2>
+          <p className="text-xl max-w-xl drop-shadow-md">
+            EliteAfrika connecte les passionnés aux meilleurs événements et œuvres artistiques digitales
+            d’Afrique.
+          </p>
+          <div className="flex gap-6">
+            <a
+              href="#download"
+              className={`${colors.primaryBtnBg} ${colors.primaryBtnText} px-8 py-3 rounded-full font-semibold shadow-lg ${colors.primaryBtnHoverBg} transition`}
+            >
+              Télécharger l'app
+            </a>
+            <a
+              href="#features"
+              className={`border-2 ${colors.secondaryBtnBorder} ${colors.secondaryBtnText} px-8 py-3 rounded-full font-semibold ${colors.secondaryBtnHoverBg} ${colors.secondaryBtnHoverText} transition`}
+            >
+              En savoir plus
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div className="md:w-1/2">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/shopping.jpg"
+            alt="Image événement musical africain"
+            width={600}
+            height={600}
+            className="rounded-3xl shadow-2xl"
+            priority
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        </div>
+      </section>
+
+      {/* FONCTIONNALITÉS */}
+      <section
+        id="features"
+        className={`bg-gradient-to-tr ${colors.primaryBgLight} py-20 px-8`}
+      >
+        <h3
+          className={`text-4xl font-extrabold text-center ${colors.primaryText} mb-16`}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
+          Pourquoi choisir EliteAfrika ?
+        </h3>
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {[
+            {
+              title: "Achat de tickets facile",
+              desc: "Réservez vos places en quelques clics, où que vous soyez.",
+              img: "https://static.vecteezy.com/system/resources/thumbnails/048/451/880/small_2x/event-ticket-template-design-white-and-blue-vector.jpg",
+            },
+            {
+              title: "Œuvres digitales uniques",
+              desc: "Découvrez et collectionnez les créations numériques des artistes africains.",
+              img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=60",
+            },
+            {
+              title: "Paiement sécurisé",
+              desc: "Vos transactions sont simples, rapides et protégées à 100%.",
+              img: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=400&q=60",
+            },
+          ].map(({ title, desc, img }, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition"
+            >
+              <Image
+                src={img}
+                alt={title}
+                width={400}
+                height={250}
+                className="object-cover w-full h-56"
+              />
+              <div className={`${colors.primaryText} p-6`}>
+                <h4 className="text-2xl font-bold mb-3">{title}</h4>
+                <p className="text-gray-700">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION ARTISTES */}
+      <section
+        id="artists"
+        className={`py-20 px-8 max-w-4xl mx-auto text-center ${colors.primaryText}`}
+      >
+        <h3 className="text-4xl font-extrabold mb-8">
+          Soutenir les talents africains
+        </h3>
+        <p className="text-lg leading-relaxed">
+          EliteAfrika est un espace dédié aux créateurs pour exposer, vendre et faire rayonner leur art à
+          travers le monde.
+          Rejoignez la communauté et faites partie de la révolution culturelle digitale africaine.
+        </p>
+      </section>
+
+      {/* CTA */}
+      <section
+        id="download"
+        className={`bg-gradient-to-r ${colors.ctaBgGradient} py-20 text-center text-white`}
+      >
+        <h3 className="text-4xl font-extrabold mb-4 drop-shadow-md">
+          Téléchargez EliteAfrika maintenant
+        </h3>
+        <p className="mb-8 max-w-xl mx-auto drop-shadow-sm">
+          Rejoignez la communauté et vivez la culture africaine autrement grâce à notre application mobile intuitive.
+        </p>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#"
+          className="bg-slate-900 text-white-600 px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-indigo-100 hover:text-slate-600 transition"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          Télécharger
         </a>
+      </section>
+
+      {/* FOOTER */}
+      <footer
+        className={`${colors.footerBg} ${colors.footerText} py-8 text-center text-sm`}
+      >
+        <p>
+          © {new Date().getFullYear()} EliteAfrika. Tous droits réservés. <br />
+          Développé par{' '}
+          <a
+            href="https://oumiservice.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-yellow-300 transition"
+          >
+            Oumiservice
+          </a>
+        </p>
       </footer>
-    </div>
+
+    </main>
   );
 }
