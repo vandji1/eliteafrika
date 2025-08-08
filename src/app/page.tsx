@@ -50,7 +50,7 @@ export default function Home() {
           href="#download"
           className={`${colors.primaryBtnBg} ${colors.primaryBtnText} font-bold px-5 py-2 rounded-full shadow-lg ${colors.primaryBtnHoverBg} transition`}
         >
-          Télécharger l'app
+          Télécharger l&apos;app
         </a>
       </header>
 
@@ -71,7 +71,7 @@ export default function Home() {
               href="#download"
               className={`${colors.primaryBtnBg} ${colors.primaryBtnText} px-8 py-3 rounded-full font-semibold shadow-lg ${colors.primaryBtnHoverBg} transition`}
             >
-              Télécharger l'app
+              Télécharger l&apos;app
             </a>
             <a
               href="#features"
