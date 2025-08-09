@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { supabase } from '../../../supabase';
@@ -7,6 +9,7 @@ import { supabase } from '../../../supabase';
 export default function ResetPassword() {
   const router = useRouter();
 
+  // Récupération du token, gestion du type string | string[]
   const rawAccessToken = router.query.access_token;
   const accessToken =
     typeof rawAccessToken === 'string' ? rawAccessToken : rawAccessToken?.[0] || '';
@@ -22,7 +25,7 @@ export default function ResetPassword() {
     }
   }, [accessToken]);
 
-  const handleReset = async (e: { preventDefault: () => void; }) => {
+  const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg('');
     setSuccessMsg('');
@@ -38,6 +41,7 @@ export default function ResetPassword() {
 
     setLoading(true);
 
+    // Authentification avec le token
     const { error: sessionError } = await supabase.auth.setSession({
       access_token: accessToken,
       refresh_token: '',
@@ -49,6 +53,7 @@ export default function ResetPassword() {
       return;
     }
 
+    // Mise à jour du mot de passe
     const { error } = await supabase.auth.updateUser({ password });
     setLoading(false);
 
