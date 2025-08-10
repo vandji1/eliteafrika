@@ -1,6 +1,7 @@
-// pas de 'use client' ici, pas de hooks
+// src/app/reset-password/page.tsx
+
 import ResetPasswordClient from './restepass';
 
-export default function Page() {
+export default function ResetPasswordPage() {
   return <ResetPasswordClient />;
 }
