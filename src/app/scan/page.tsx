@@ -107,8 +107,8 @@ export default function PageScan() {
 
             <div className="max-w-md mx-auto mt-4 text-lg text-center text-gray-600">
                 <p>- Dirigez la caméra vers le QR code du ticket.</p>
-                <p>- Assurez-vous que l'éclairage est suffisant pour une lecture optimale.</p>
-                <p>- Autorisez l'accès à la caméra si demandé par le navigateur.</p>
+                <p>- Assurez-vous que l&apos;éclairage est suffisant pour une lecture optimale.</p>
+                <p>- Autorisez l&apos;accès à la caméra si demandé par le navigateur.</p>
             </div>
         </div>
     );
