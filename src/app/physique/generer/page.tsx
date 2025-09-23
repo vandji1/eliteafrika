@@ -22,9 +22,9 @@ export default function CreateTicketPage() {
     setErrorMsg('');
     setCreated([]);
 
-    const tickets = Array.from({ length: 400 }, () => ({
+    const tickets = Array.from({ length: 5000 }, () => ({
       id_ticket: generateRandomId(),
-      type: 'VVIP',
+      type: 'VIP',
       statut: 'valide',
     }));
 
@@ -48,7 +48,7 @@ export default function CreateTicketPage() {
         disabled={loading}
         className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
       >
-        {loading ? 'Génération en cours...' : 'Générer 100 tickets'}
+        {loading ? 'Génération en cours...' : 'Générer 500 tickets'}
       </button>
 
       {errorMsg && <p className="text-red-600 mt-4">❌ {errorMsg}</p>}

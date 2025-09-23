@@ -11,8 +11,8 @@ export async function GET() {
   const { data: tickets, error } = await supabase
     .from('ticket_physique')
     .select('id_ticket, type, statut')
-    .eq('type', 'VVIP') // 🟢 "Standard" avec majuscule si c’est ce que tu as stocké
-    .limit(500);
+    .eq('type', 'VIP') // 🟢 "Standard" avec majuscule si c’est ce que tu as stocké
+    .limit(5000);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

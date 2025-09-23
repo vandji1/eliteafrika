@@ -60,7 +60,7 @@ export default function TicketsPage() {
       <div
         className={`grid gap-4 ${
           format === "carte" ? "grid-cols-2" : "grid-cols-3"
-        } print:grid-cols-1`}
+        } print:grid-cols-2`}
         style={{
           width: "210mm", // largeur A4
           minHeight: "297mm", // hauteur A4
@@ -72,10 +72,10 @@ export default function TicketsPage() {
             className={`relative bg-cover text-white shadow-lg rounded-xl overflow-hidden border ${
               format === "carte"
                 ? "w-[91mm] h-[61mm]"
-                : "w-[150mm] h-[14mm]"
+                : "w-[70mm] h-[25mm]"
             }`}
             style={{
-              backgroundImage: "url('/vip.png')",
+              backgroundImage: "url('/affiche_concert.png')",
               backgroundPosition: format === "carte" ? "center" : "top",
             }}
           >
@@ -100,7 +100,7 @@ export default function TicketsPage() {
                 />
               </div>
             ) : (
-              <div className="relative flex items-center justify-center ml-52 gap-4 h-full px-2">
+              <div className="relative flex items-center justify-between h-full px-2">
                 <p className="text-xs font-bold">{ticket.type}</p>
                 <img
                   src={ticket.qr}
