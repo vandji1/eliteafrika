@@ -19,7 +19,7 @@ export default function PageScan() {
         try {
             // 🔍 Extraction du ticketId depuis :
             // - "TICKET_abc123"
-            // - ou "https://fandrop.io/verif/abc123"
+            // - ou "eliteafrika_abc123"
             let ticketId: string | null = null;
 
             if (code.includes('EliteAfrika')) {
