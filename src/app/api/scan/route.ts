@@ -80,7 +80,7 @@ export async function GET(req: NextRequest) {
 
       const { data: updated, error: updateError } = await supabase
         .from('ticket_physique')
-        .update({ used: true })
+        .update({ used: false })
         .eq('id_ticket', ticketId)
         .select('*')
         .maybeSingle();
