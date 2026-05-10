@@ -64,7 +64,6 @@ export async function GET(req: NextRequest) {
         .from('ticket_physique')
         .select('*')
         .eq('id_ticket', ticketId)
-        .eq('statut', 'true') // ⚡ texte si ta colonne est text
         .eq('used', false)
         .maybeSingle();
 
