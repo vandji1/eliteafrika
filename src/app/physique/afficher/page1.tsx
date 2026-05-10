@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Ticket {
   id: string;
@@ -93,19 +94,25 @@ export default function TicketsPage() {
                     eliteafrika.com
                   </p>
                 </div>
-                <img
+                <Image
                   src={ticket.qr}
                   alt={`QR ${ticket.id}`}
-                  className="w-16 h-16 bg-white p-1 rounded"
+                  width={64}
+                  height={64}
+                  unoptimized
+                  className="bg-white p-1 rounded"
                 />
               </div>
             ) : (
               <div className="relative flex items-center justify-between h-full px-2">
                 <p className="text-xs font-bold">{ticket.type}</p>
-                <img
+                <Image
                   src={ticket.qr}
                   alt={`QR ${ticket.id}`}
-                  className="w-12 h-12 bg-white p-1 rounded"
+                  width={48}
+                  height={48}
+                  unoptimized
+                  className="bg-white p-1 rounded"
                 />
               </div>
             )}

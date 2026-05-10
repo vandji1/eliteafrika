@@ -1,12 +1,10 @@
 // src/app/reset-password/ResetPasswordClient.tsx
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { supabase } from '../../../supabase';
 
 export default function ResetPasswordClient() {
-  const router = useRouter();
 
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [password, setPassword] = useState('');
@@ -17,7 +15,6 @@ export default function ResetPasswordClient() {
     // Supprime le `#` du début
     const hashParams = new URLSearchParams(window.location.hash.substring(1));
     const token = hashParams.get('access_token');
-    const refreshToken = hashParams.get('refresh_token');
 
     if (!token) {
       setMessage({ text: 'Token de réinitialisation manquant.', type: 'error' });

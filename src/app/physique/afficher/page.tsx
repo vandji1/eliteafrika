@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Ticket {
   id: string;
@@ -82,10 +83,13 @@ export default function TicketsPage() {
 
             {format === "carte" ? (
               <div className="relative flex flex-col items-end right-7 top-[10px] justify-end gap-0 h-full w-full p-3">
-                <img
+                <Image
                   src={ticket.qr}
                   alt={`QR ${ticket.id}`}
-                  className="w-20 h-20 bg-white p-0 rounded"
+                  width={80}
+                  height={80}
+                  unoptimized
+                  className="bg-white p-0 rounded"
                 />
                 <div className="flex flex-col items-end gap-0">
                   <h2 className="text-sm font-bold text-right hidden">
@@ -105,10 +109,13 @@ export default function TicketsPage() {
                 <h2 className="text-sm font-bold text-right hidden">
                   {ticket.type}
                 </h2>
-                <img
+                <Image
                   src={ticket.qr}
                   alt={`QR ${ticket.id}`}
-                  className="w-22 h-22 bg-white p-0 rounded"
+                  width={88}
+                  height={88}
+                  unoptimized
+                  className="bg-white p-0 rounded"
                 />
                 <div className="flex flex-col ml-2 items-start gap-0">
                   <span className="text-[8px] text-slate-100 font-black">

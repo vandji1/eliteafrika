@@ -45,7 +45,7 @@ export default function SuccessPage() {
             transition={{ delay: 0.2 }}
             className="text-slate-500"
           >
-            Merci pour votre confiance. Votre commande est en cours de préparation par l'équipe EliteAfrika.
+            Merci pour votre confiance. Votre commande est en cours de préparation par l&apos;équipe EliteAfrika.
           </motion.p>
         </div>
 
@@ -81,7 +81,7 @@ export default function SuccessPage() {
           </button>
           
           <Link href="/dashboard" className="flex items-center justify-center gap-2 bg-white border-2 border-slate-200 text-slate-700 font-bold py-4 rounded-2xl hover:bg-slate-50 transition-all active:scale-95">
-            Suivre l'achat
+            Suivre l&apos;achat
             <ArrowRight size={18} />
           </Link>
         </div>
