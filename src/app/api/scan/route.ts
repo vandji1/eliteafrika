@@ -17,8 +17,7 @@ export async function GET(req: NextRequest) {
   );
 
   console.log(
-    `🔍 Scan du ticket [${ticketId}] → Type détecté : ${
-      isUUID ? 'virtuel (UUID)' : 'papier (physique)'
+    `🔍 Scan du ticket [${ticketId}] → Type détecté : ${isUUID ? 'virtuel (UUID)' : 'papier (physique)'
     }`
   );
 
@@ -65,7 +64,7 @@ export async function GET(req: NextRequest) {
         .from('ticket_physique')
         .select('*')
         .eq('id_ticket', ticketId)
-        .eq('statut', 'valide') // ⚡ texte si ta colonne est text
+        .eq('statut', 'true') // ⚡ texte si ta colonne est text
         .eq('used', false)
         .maybeSingle();
 

@@ -16,16 +16,18 @@ export default function CreateTicketPage() {
   const [created, setCreated] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const ticketCount = 500;
+  const type = 'VVIP';
 
   const handleGenerate = async () => {
     setLoading(true);
     setErrorMsg('');
     setCreated([]);
 
-    const tickets = Array.from({ length: 5000 }, () => ({
+    const tickets = Array.from({ length: ticketCount }, () => ({
       id_ticket: generateRandomId(),
-      type: 'VIP',
-      statut: 'valide',
+      type: type,
+      statut: true,
     }));
 
     const { error } = await supabase.from('ticket_physique').insert(tickets);
@@ -42,13 +44,13 @@ export default function CreateTicketPage() {
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">🎫 Générateur de tickets vip</h1>
+      <h1 className="text-2xl font-bold mb-4">🎫 Générateur de tickets {type}</h1>
       <button
         onClick={handleGenerate}
         disabled={loading}
         className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
       >
-        {loading ? 'Génération en cours...' : 'Générer 500 tickets'}
+        {loading ? 'Génération en cours...' : `Générer ${ticketCount} tickets ${type}`}
       </button>
 
       {errorMsg && <p className="text-red-600 mt-4">❌ {errorMsg}</p>}

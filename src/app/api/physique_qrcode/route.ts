@@ -12,7 +12,8 @@ export async function GET() {
     .from('ticket_physique')
     .select('id_ticket, type, statut')
     .eq('type', 'VIP') // 🟢 "Standard" avec majuscule si c’est ce que tu as stocké
-    .limit(5000);
+    .order('created_at', { ascending: false }) // 🔥 les plus récents d’abord
+    .limit(500);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -20,7 +21,7 @@ export async function GET() {
 
   const result = await Promise.all(
     tickets.map(async (ticket) => {
-      const url = `Ticket-Physique-Eliteafrika_${ticket.id_ticket}`;
+      const url = `${ticket.id_ticket}`;
       const qrDataUrl = await QRCode.toDataURL(url);
       return {
         id: ticket.id_ticket,
